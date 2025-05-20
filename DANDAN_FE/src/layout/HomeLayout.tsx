@@ -5,12 +5,10 @@ import NavBar from '../components/NavBar';
 const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
-
   return (
-    <div className="w-[393px] h-[852px] mx-auto border border-gray-300 flex flex-col">
-      <div className="h-[40px] flex items-center justify-center"/>
+    <div className="w-full h-screen max-w-[393px] max-h-[852px] mx-auto border border-gray-300 flex flex-col bg-white shadow-lg">
       <NavBar />
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto flex flex-col px-10">
         {children}
       </div>
     </div>

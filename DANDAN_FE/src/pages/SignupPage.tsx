@@ -8,14 +8,16 @@ import Signup4 from '../components/Signup4';
 
 const SignupPage = () => {
   return (
-    <HomeLayout>
-      <Routes>
-        <Route path="/" element={<Signup1 />} />
-        <Route path="2" element={<Signup2 />} />
-        <Route path="3" element={<Signup3 />} />
-        <Route path="4" element={<Signup4 />} />
-      </Routes>
-    </HomeLayout>
+    <div className="min-h-screen flex items-center justify-center bg-gray-200 overflow-hidden">
+      <HomeLayout>
+        <Routes>
+          <Route path="/" element={<Signup1 />} />
+          <Route path="2" element={<Signup2 />} />
+          <Route path="3" element={<Signup3 />} />
+          <Route path="4" element={<Signup4 />} />
+        </Routes>
+      </HomeLayout>
+    </div>
   );
 };
 

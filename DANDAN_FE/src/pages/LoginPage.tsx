@@ -4,9 +4,11 @@ import LoginForm from '../components/LoginForm';
 
 const LoginPage = () => {
   return (
-    <HomeLayout>
-      <LoginForm />
-    </HomeLayout>
+    <div className="min-h-screen flex items-center justify-center bg-gray-200">
+      <HomeLayout>
+        <LoginForm />
+      </HomeLayout>
+    </div>
   );
 };
 
