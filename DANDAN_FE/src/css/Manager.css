@@ -59,7 +59,7 @@
 /* 메인 영역 */
 .manager-main {
   margin: 0 16px;
-  border: 1px solid #6C7AE8;
+  /* border: 1px solid #6C7AE8; */
   padding-bottom: 60px; /* 하단 고정된 페이지네이션과 겹치지 않게 여백 추가 */
 }
 .word-list-header {
