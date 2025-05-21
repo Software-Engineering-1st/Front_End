@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import eye from '../assets/eye.png';
+import { FiEyeOff } from 'react-icons/fi';
 
 const Signup2 = () => {
     const [password, setPassword] = useState('');
@@ -37,7 +38,7 @@ const Signup2 = () => {
                     value={password}
                     className="w-full border-b border-gray-300 py-3 px-0 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#2f357d] bg-transparent text-base pr-10"
                 />
-                <img className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 cursor-pointer" src={eye} alt="비밀번호 보기" onClick={() => setPwcounter(!pwcounter)}/>
+                          <FiEyeOff className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer" onClick={() => setPwcounter(!pwcounter)}/>
             </div>
             <div className="mb-10 relative flex items-center">
                 <input
@@ -47,7 +48,7 @@ const Signup2 = () => {
                     value={confirmPassword}
                     className="w-full border-b border-gray-300 py-3 px-0 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#2f357d] bg-transparent text-base pr-10"
                 />
-                <img className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 cursor-pointer" src={eye} alt="비밀번호 보기" onClick={() => setConfirmPwcounter(!confirmPwcounter)}/>
+                <FiEyeOff className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer" onClick={() => setConfirmPwcounter(!confirmPwcounter)}/>
             </div>
             {!passwordMatch && confirmPassword && <p className="mt-1 text-sm text-red-500 mb-4">비밀번호가 일치하지 않습니다</p>}
             <button

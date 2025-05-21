@@ -13,10 +13,10 @@ const MainPage = () => {
     <HomeLayout>
       <div className="flex flex-col flex-1 pt-4 pb-4 gap-8">
         {/* 환영 메시지 */}
-        <div className="bg-[#f3f6fd] rounded-xl px-4 py-8 flex items-center justify-between">
+        <div className="bg-[#f3f6fd] rounded-xl px-4 py-8 flex items-center justify-between" onClick={()=>{navigate('/mypage')}}>
           <div>
             <div className="text-[16px] text-gray-500 mb-1">환영합니다</div>
-            <div className="text-[20px] font-bold text-[#393e74]">소공1조에이쁠쥐님</div>
+            <div className="text-[20px] font-bold text-[#393e74]" >소공1조에이쁠쥐님</div>
           </div>
           <span className="text-gray-400 text-2xl"><GrNext/></span>
         </div>

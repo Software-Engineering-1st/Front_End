@@ -7,12 +7,14 @@ import FrontPage from './pages/FrontPage';
 import WordReadyPage from './pages/WordReadyPage';
 import WordStudyPage from './pages/WordStudyPage';
 import WordStudyCompletePage from './pages/WordStudyCompletePage';
+import Mypage from './pages/Mypage';
 
 
 const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/mypage" element={<Mypage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />} />
         <Route path="/main" element={<MainPage />} />

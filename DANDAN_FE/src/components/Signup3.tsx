@@ -37,7 +37,7 @@ function Signup3() {
                 />
                 <span className="text-lg text-gray-700">개</span>
             </div>
-            <button
+            <button 
                 className={`w-full py-3 rounded-md font-semibold text-base mt-2 transition ${(targetCount && parseInt(targetCount) > 0 && parseInt(targetCount) < 999) ? 'bg-[#2f357d] text-white' : 'bg-gray-300 text-gray-400 cursor-not-allowed'}`}
                 disabled={!targetCount || parseInt(targetCount) === 0}
                 onClick={() => {

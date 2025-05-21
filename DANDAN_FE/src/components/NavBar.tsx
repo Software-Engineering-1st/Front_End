@@ -20,6 +20,8 @@ const NavBar = () => {
         return 'DANDAN';
       case '/':
         return '메인 페이지';
+      case '/mypage':
+        return '마이페이지';
       default:
         return '';
     }
