@@ -1,8 +1,8 @@
 import React from 'react';
 import HomeLayout from '../layout/HomeLayout';
 import '../css/Mypage.css';
-// import ghost from '../assets/Ghost.png';
-import ghost from '../assets/ghost.svg';
+import ghost from '../assets/Ghost.png';
+// import ghost from '../assets/ghost.svg';
 
 const Mypage = () => {
   // 실제 데이터는 props/context/api 등으로 대체 가능
@@ -31,6 +31,8 @@ const Mypage = () => {
           </div>
           <img src={ghost} alt="goal-ghost" className="target-ghost" />
         </div>
+
+        <div className="mypage-divider" />
 
         {/* 버튼 영역 */}
         <div className="mypage-btn-group">
