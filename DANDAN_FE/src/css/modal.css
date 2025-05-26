@@ -1,0 +1,97 @@
+/* AddWord 모달 전체 컨테이너 */
+.addword-container {
+  width: 320px;
+  height: 550px;
+  background: #fff;
+  border: 1px solid #bfc2d9;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 28px 28px 28px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  
+}
+
+/* 닫기 버튼 */
+.addword-close-btn {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #888;
+  cursor: pointer;
+}
+
+/* 제목 */
+.addword-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  margin-top: 0;
+}
+
+/* 라벨 */
+.addword-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #23234b;
+  margin-bottom: 8px;
+}
+
+/* 입력창 */
+.addword-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #bfc2d9;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+.modify-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+.addword-input:focus {
+  border: 1.5px solid #23234b;
+}
+
+/* 추가 버튼 */
+.addword-submit-btn {
+  width: 100%;
+  background: #2d2e5f;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.addword-submit-btn:hover {
+  background: #23234b;
+}
+
+.gap{
+    margin-bottom: 24px;
+}
