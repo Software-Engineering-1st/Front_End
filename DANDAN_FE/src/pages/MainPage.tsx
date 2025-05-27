@@ -13,13 +13,13 @@ const MainPage = () => {
     <HomeLayout>
       <div className="flex flex-col flex-1 pt-4 pb-4 gap-8">
         {/* 환영 메시지 */}
-        <div className="bg-[#f3f6fd] rounded-xl px-4 py-8 flex items-center justify-between">
+        <button className="bg-[#f3f6fd] rounded-xl px-4 py-8 flex items-center justify-between w-full text-left" onClick={() => navigate('/mypage')}>
           <div>
             <div className="text-[16px] text-gray-500 mb-1">환영합니다</div>
             <div className="text-[20px] font-bold text-[#393e74]">소공1조에이쁠쥐님</div>
           </div>
           <span className="text-gray-400 text-2xl"><GrNext/></span>
-        </div>
+        </button>
         
         {/* 목표 단어 카드 */}
         <div className="flex flex-col gap-4">
@@ -39,12 +39,14 @@ const MainPage = () => {
             <img src={toeic} alt="ETS" className="w-16 h-16 object-contain" />
             <span className="text-[16px] text-gray-700 font-semibold">TOEIC<br/>단어 외우기</span>
           </button>
-          <button className="rounded-xl border border-gray-200 bg-white flex flex-col items-center justify-center py-6 gap-2">
+          <button className="rounded-xl border border-gray-200 bg-white flex flex-col items-center justify-center py-6 gap-2"
+                  onClick={() => navigate('/test-ready')}>
             <img src={test} alt="TEST" className="w-14 h-14 object-contain" />
             <span className="text-[16px] text-gray-700 font-semibold">TEST</span>
           </button>
           <div className="flex gap-4">
-            <button className="flex-1 rounded-xl border border-gray-200 bg-white flex flex-col items-center justify-center py-6 gap-2">
+            <button className="flex-1 rounded-xl border border-gray-200 bg-white flex flex-col items-center justify-center py-6 gap-2"
+              onClick={() => navigate('/wrong-note')}>
               <img src={note} alt="오답노트" className="w-14 h-14 object-contain" />
               <span className="text-[16px] text-gray-700 font-semibold">오답노트</span>
             </button>
