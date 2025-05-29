@@ -1,6 +1,6 @@
 import React from 'react';
 import ghost from '../assets/ghost.svg';
-import test from '../assets/test.svg'; // 파란 캐릭터 대체
+import test from '../assets/blueman.svg'; // 파란 캐릭터 대체
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const TestResultPage = () => {

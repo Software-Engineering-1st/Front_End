@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ets from '../assets/Toeic.svg';
-import ghost from '../assets/ghost.svg';
+import ghost from '../assets/blueman.svg';
 import { useGoal } from '../context/GoalContext';
 
 const WordReadyPage = () => {

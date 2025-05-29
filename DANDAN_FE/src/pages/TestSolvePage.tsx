@@ -81,7 +81,7 @@ const TestSolvePage = () => {
     if (currentIndex < words.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      navigate('/test-complete', { state: { score: input.trim().toLowerCase() === currentWord.answer ? score + 1 : score, total: words.length } });
+      navigate('/test-complete', { state: { score, total: words.length } });
     }
   };
 
