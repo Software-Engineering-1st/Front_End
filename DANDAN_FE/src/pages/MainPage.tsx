@@ -6,9 +6,14 @@ import note from '../assets/note.svg';
 import HomeLayout from '../layout/HomeLayout';
 import { GrNext } from "react-icons/gr";
 import { useNavigate } from 'react-router-dom';
+import { useGoal } from '../context/GoalContext';
+import { useUser } from '../context/UserContext';
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const { goal } = useGoal();
+  const { nickname } = useUser();
+  
   return (
     <HomeLayout>
       <div className="flex flex-col flex-1 pt-4 pb-4 gap-8">
@@ -16,19 +21,18 @@ const MainPage = () => {
         <button className="bg-[#f3f6fd] rounded-xl px-4 py-8 flex items-center justify-between w-full text-left" onClick={() => navigate('/mypage')}>
           <div>
             <div className="text-[16px] text-gray-500 mb-1">환영합니다</div>
-            <div className="text-[20px] font-bold text-[#393e74]">소공1조에이쁠쥐님</div>
+            <div className="text-[20px] font-bold text-[#393e74]">{nickname}님</div>
           </div>
           <span className="text-gray-400 text-2xl"><GrNext/></span>
         </button>
         
         {/* 목표 단어 카드 */}
-        <div className="flex flex-col gap-4">
         <div className="text-[18px] font-bold text-black">단어를 외워보자</div>
         <div className="rounded-xl border border-gray-200 bg-white flex items-center px-4 py-4 gap-4">
           <img src={ghost} alt="ghost" className="w-36 h-36" />
           <div className="flex flex-col flex-1 items-center gap-1 text-center">
             <div className="text-[18px] text-gray-500">목표 단어</div>
-            <div className="text-[24px] font-extrabold text-[#393e74] leading-none">38<span className="text-lg font-normal text-gray-700 align-top ml-1">개</span></div>
+            <div className="text-[24px] font-extrabold text-[#393e74] leading-none">{goal}<span className="text-lg font-normal text-gray-700 align-top ml-1">개</span></div>
           </div>
         </div>
 
@@ -52,8 +56,6 @@ const MainPage = () => {
             </button>
           </div>
         </div>
-        </div>
-        
       </div>
     </HomeLayout>
   );

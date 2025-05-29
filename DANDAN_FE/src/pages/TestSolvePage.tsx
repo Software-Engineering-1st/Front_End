@@ -18,7 +18,28 @@ const words = [
     ],
     answer: 'improve',
   },
-  // ...더 많은 단어
+  {
+    meanings: [
+      '달성하다, 성취하다',
+      '이루다',
+    ],
+    answer: 'achieve',
+  },
+  {
+    meanings: [
+      '도전',
+      '도전하다',
+      '이의를 제기하다',
+    ],
+    answer: 'challenge',
+  },
+  {
+    meanings: [
+      '탐험하다, 탐구하다',
+      '조사하다',
+    ],
+    answer: 'explore',
+  },
 ];
 
 const TestSolvePage = () => {

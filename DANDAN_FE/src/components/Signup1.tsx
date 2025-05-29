@@ -8,42 +8,34 @@ const Signup1 = () => {
     const [nicknameAlert, setNicknameAlert] = useState('');
     const [idAlert, setIdAlert] = useState('');
     const [isValid, setIsValid] = useState(false);
-    //닉네임조건 함수
+
+    // 닉네임 조건 함수
     const validateNickname = (value: string) => {
       setNickname(value);
       if (value.length >= 4 && value.length <= 6) {
         setNicknameAlert('사용 가능한 닉네임입니다');
-        checkValidation(value, id);
       } else {
         setNicknameAlert('닉네임은 4~6자여야 합니다');
-        setIsValid(false);
       }
+      // 입력값이 바뀔 때마다 isValid 업데이트
+      const idRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9]{7,15}$/;
+      setIsValid(value.length >= 4 && value.length <= 6 && idRegex.test(id));
     };
-    //Id조건 함수
+    // 아이디 조건 함수
     const validateId = (value: string) => {
       setId(value);
-      // 영문자와 숫자가 모두 포함되어 있으며, 길이는 7~15자
       const idRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9]{7,15}$/;
-    
       if (idRegex.test(value)) {
         setIdAlert('사용가능한 아이디입니다');
-        checkValidation(nickname, value);
       } else {
         setIdAlert('아이디는 영문자와 숫자를 모두 포함한 7~15자의 문자열이어야 합니다.');
-        setIsValid(false);
       }
+      // 입력값이 바뀔 때마다 isValid 업데이트
+      setIsValid(nickname.length >= 4 && nickname.length <= 6 && idRegex.test(value));
     };
-    //sign1버튼 함수
-    const checkValidation = (nick: string, userId: string) => {
-      if (nick.length >= 4 && nick.length <= 6 && /^[A-Za-z0-9]{7,15}$/.test(userId)) {
-        setIsValid(true);
-      } else {
-        setIsValid(false);
-      }
-    };
-    // 중복 확인 로직 추가
+    // 중복 확인 로직 (API 없이 alert만)
     const checkId = () => {
-      alert("아이디 중복 확인");
+      alert('아이디 중복 확인!');
     };
 
     return (

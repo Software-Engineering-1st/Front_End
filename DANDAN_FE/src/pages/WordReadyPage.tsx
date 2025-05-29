@@ -2,9 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ets from '../assets/Toeic.svg';
 import ghost from '../assets/ghost.svg';
+import { useGoal } from '../context/GoalContext';
 
 const WordReadyPage = () => {
   const navigate = useNavigate();
+  const { goal } = useGoal();
 
   return (
     <div className="flex flex-col min-h-screen max-w-[393px] mx-auto bg-white px-10 py-6">
@@ -18,12 +20,12 @@ const WordReadyPage = () => {
       </div>
 
       {/* 목표 단어 카드 */}
-      <div className="rounded-xl border border-gray-300 flex items-center justify-between px-6 py-6 mb-8">
+      <div className="rounded-xl border border-gray-300 flex items-center px-6 py-6 mb-8">
         <img src={ets} alt="ETS" className="w-20 h-10 object-contain" />
         <div className="flex flex-col items-end">
           <div className="text-[18px] text-gray-500">목표 단어</div>
           <div className="text-[36px] font-extrabold text-[#393e74] leading-none">
-            38<span className="text-lg font-normal text-gray-700 align-top ml-1">개</span>
+            {goal}<span className="text-lg font-normal text-gray-700 align-top ml-1">개</span>
           </div>
         </div>
       </div>

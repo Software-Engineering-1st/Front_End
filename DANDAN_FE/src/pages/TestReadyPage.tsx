@@ -2,9 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import testIcon from '../assets/test.svg'; // 시험지 아이콘
 import mascot from '../assets/ghost.svg';  // 마스코트(ghost 등)
+import { useGoal } from '../context/GoalContext';
 
 const TestReadyPage = () => {
   const navigate = useNavigate();
+  const { goal } = useGoal();
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gray-100">
@@ -24,7 +26,7 @@ const TestReadyPage = () => {
           <div className="flex flex-col items-end flex-1">
             <div className="text-[18px] text-[#393e74] font-semibold">시험 볼 단어</div>
             <div className="text-[40px] font-extrabold text-[#393e74] leading-none">
-              38<span className="text-lg font-normal text-gray-700 align-top ml-1">개</span>
+              {goal}<span className="text-lg font-normal text-gray-700 align-top ml-1">개</span>
             </div>
           </div>
         </div>

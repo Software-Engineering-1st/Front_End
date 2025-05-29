@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useGoal } from '../context/GoalContext';
 
 const GoalEditPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const prevGoal = location.state?.goal ?? 38;
-  const [goal, setGoal] = useState(prevGoal);
+  const { goal: prevGoal, setGoal } = useGoal();
+  const [goal, setLocalGoal] = useState(prevGoal);
 
   const isChanged = goal !== prevGoal && goal > 0;
 
@@ -26,7 +27,7 @@ const GoalEditPage = () => {
             type="number"
             min={1}
             value={goal}
-            onChange={e => setGoal(Number(e.target.value))}
+            onChange={e => setLocalGoal(Number(e.target.value))}
             className="text-[48px] font-extrabold text-[#393e74] text-center w-24 outline-none border-b border-gray-300 focus:border-[#393e74] bg-transparent"
           />
           <span className="text-2xl font-bold text-black ml-2">개</span>
@@ -34,7 +35,10 @@ const GoalEditPage = () => {
         <button
           className={`w-full py-3 rounded-md text-lg font-bold mt-4 ${isChanged ? 'bg-[#393e74] text-white' : 'bg-gray-300 text-white'}`}
           disabled={!isChanged}
-          onClick={() => navigate('/mypage', { state: { goal } })}
+          onClick={() => {
+            setGoal(goal);
+            navigate('/mypage');
+          }}
         >
           수정
         </button>

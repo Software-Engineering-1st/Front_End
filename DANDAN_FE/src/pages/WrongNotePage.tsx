@@ -2,8 +2,19 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import note from '../assets/note.svg';
 
-const dummyDates: string[] = ['2025.05.01', '2025.04.27'];
-// 실제로는 []일 때만 안내 UI, 테스트용으로 비워둠
+const wrongNoteData: { [date: string]: string[] } = {
+  '2025.05.29': ['challenge'],
+  '2025.05.01': [
+    'demonstrate', 'determine', 'establish', 'identify', 'indicate', 'interpret', 'maintain', 'obtain', 'participate', 'require',
+    'identify', 'cute', 'achieve', 'explore', 'analyze', 'assume', 'benefit', 'compare', 'consider', 'define',
+    'demonstrate', 'determine', 'establish', 'identify', 'indicate', 'interpret', 'maintain', 'obtain', 'participate', 'require',
+  ],
+  '2025.04.27': [
+    'accept', 'allow', 'apply', 'arrange', 'attend', 'avoid', 'complete', 'confirm', 'connect', 'contain',
+    'continue', 'contribute', 'create', 'describe', 'discuss', 'encourage', 'explain', 'express', 'increase', 'influence',
+  ],
+};
+const dummyDates: string[] = Object.keys(wrongNoteData);
 
 const WrongNotePage = () => {
   const navigate = useNavigate();

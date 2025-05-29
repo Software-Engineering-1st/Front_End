@@ -26,16 +26,17 @@ const NavBar = () => {
   };
 
   const isMainPage = location.pathname === '/main';
+  const isAdminPage = location.pathname === '/admin';
 
   return (
     <div className="h-[90px] flex items-center justify-between px-4">
       <div className="flex items-center" style={{ width: '2rem', minWidth: '2rem', justifyContent: 'center' }}>
-        {!isMainPage ? (
+        {!isMainPage && !isAdminPage ? (
           <IoChevronBackOutline className="text-2xl font-bold" onClick={() => navigate(-1)}/>
         ) : null}
       </div>
-      <h2 className={`flex-1 text-center font-extrabold ${isMainPage ? 'text-[32px]' : 'text-xl'}`} style={{ color: '#393e74' }}>
-        {getPageTitle(location.pathname)}
+      <h2 className={`flex-1 text-center font-extrabold ${isMainPage || isAdminPage ? 'text-[32px]' : 'text-xl'}`} style={{ color: '#393e74' }}>
+        {isAdminPage ? 'DANDAN' : getPageTitle(location.pathname)}
       </h2>
       <div className="w-6"></div> {/* 오른쪽 여백을 위한 빈 div */}
     </div>
